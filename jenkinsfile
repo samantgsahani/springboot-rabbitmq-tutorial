@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    tools {
+        jdk 'jdk-21'         // 👈 Match the name you defined in Jenkins
+        maven 'maven-tool'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+
+        stage('Maven Compile') {
+            steps {
+                bat 'mvn compile'
+            }
+        }
+    }
+}
