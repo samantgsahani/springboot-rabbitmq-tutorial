@@ -27,7 +27,7 @@ pipeline {
 
      stage('Docker image build') {
             steps {
-                bat 'docker build -t rabbitmq-image'
+                bat 'docker build -t rabbitmq-image .'
             }
         }
     }
