@@ -18,5 +18,17 @@ pipeline {
                 bat 'mvn compile'
             }
         }
+
+         stage('Maven package') {
+            steps {
+                bat 'mvn clean package'
+            }
+        }
+
+     stage('Docker image build') {
+            steps {
+                bat 'docker build -t rabbitmq-image'
+            }
+        }
     }
 }
